@@ -109,6 +109,14 @@ export default defineConfig(() =>
 			"import.meta.env.VITE_BENCH": JSON.stringify(process.env.BENCH ?? ""),
 		},
 		publicDir: resolve(__dirname, "tests/public"),
+		resolve: {
+			// The A/V sync lab specs exercise the examples package's sync
+			// modules from the engine's browser runner; Vite refuses imports
+			// that escape the project root, so expose them through an alias.
+			alias: {
+				"@av-sync-lab": resolve(__dirname, "../examples/src/examples/avSyncLab"),
+			},
+		},
 		plugins: [
 			glsl(),
 			{

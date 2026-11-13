@@ -1,0 +1,154 @@
+/**
+ * melonJS — A/V sync lab example styles.
+ * Copyright (C) 2011 - 2026 AltByte Pte Ltd — MIT License.
+ * See `packages/examples/LICENSE.md` for full license + asset credits.
+ */
+
+.avsl {
+	position: fixed;
+	top: 41px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	max-width: 1040px;
+	margin: 0 auto;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	color: #e0e0e0;
+	font-size: 14px;
+}
+
+.avsl-stage {
+	display: flex;
+	justify-content: center;
+}
+
+.avsl-canvas {
+	width: 100%;
+	max-width: 960px;
+	aspect-ratio: 960 / 420;
+	border: 1px solid #3a4356;
+	border-radius: 8px;
+	background: #10131a;
+}
+
+.avsl-panel {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	background: #1a1d24;
+	border: 1px solid #2c3140;
+	border-radius: 8px;
+	padding: 16px;
+}
+
+.avsl-readouts {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 10px;
+}
+
+.avsl-readout {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	background: #12151c;
+	border-radius: 6px;
+	padding: 8px 10px;
+}
+
+.avsl-label {
+	color: #8a93a6;
+	font-size: 12px;
+}
+
+.avsl-value {
+	font-variant-numeric: tabular-nums;
+	font-weight: 600;
+}
+
+.avsl-controls {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.avsl-controls button {
+	background: #262c3a;
+	color: #e6e6e6;
+	border: 1px solid #3d465c;
+	border-radius: 6px;
+	padding: 7px 12px;
+	cursor: pointer;
+	font: inherit;
+}
+
+.avsl-controls button:hover:not(:disabled) {
+	border-color: #82c743;
+	color: #82c743;
+}
+
+.avsl-controls button:disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.avsl-controls input[type="range"] {
+	flex: 1;
+	min-width: 160px;
+	accent-color: #82c743;
+}
+
+.avsl-offset {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex: 1;
+	min-width: 280px;
+}
+
+.avsl-saved,
+.avsl-hint {
+	color: #8de48d;
+	font-size: 12px;
+}
+
+.avsl-hint {
+	color: #8a93a6;
+}
+
+.avsl-previews {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 12px;
+}
+
+.avsl-preview {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	background: #12151c;
+	border-radius: 6px;
+	padding: 10px;
+}
+
+.avsl-preview video {
+	width: 100%;
+	border-radius: 4px;
+	background: #000;
+}
+
+.avsl-preview p {
+	margin: 0;
+	font-size: 12px;
+	color: #b6bdcc;
+}
+
+.avsl-preview a {
+	color: #5cb8ff;
+	font-size: 12px;
+}

@@ -2,7 +2,10 @@
 	"extends": "tsconfig/base.json",
 	"compilerOptions": {
 		"noEmit": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"paths": {
+			"@av-sync-lab/*": ["./../examples/src/examples/avSyncLab/*"]
+		}
 	},
 	"include": ["src", "tests", "vitest.config.ts", "scripts"]
 }

@@ -281,6 +281,11 @@ const ExampleVideo = lazy(() =>
 		default: m.ExampleVideo,
 	})),
 );
+const ExampleAVSyncLab = lazy(() =>
+	import("./examples/avSyncLab/ExampleAVSyncLab").then((m) => ({
+		default: m.ExampleAVSyncLab,
+	})),
+);
 const ExampleWaterOverworld = lazy(() =>
 	import("./examples/waterOverworld/ExampleWaterOverworld").then((m) => ({
 		default: m.ExampleWaterOverworld,
@@ -720,6 +725,14 @@ const examples: {
 		sourceDir: "video",
 		description:
 			"Video playback using the asset loader and Sprite class to display an MP4 video on canvas.",
+	},
+	{
+		component: <ExampleAVSyncLab />,
+		label: "A/V Sync Lab",
+		path: "av-sync-lab",
+		sourceDir: "avSyncLab",
+		description:
+			"Audio/video sync calibration: dial an artificial delay into a 20 s flash-and-beat track, mark it, and verify correction with recorded previews.",
 	},
 	{
 		component: <ExampleWaterOverworld />,
