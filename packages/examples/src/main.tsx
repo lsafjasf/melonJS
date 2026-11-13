@@ -23,6 +23,11 @@ const ExampleAseprite = lazy(() =>
 		default: m.ExampleAseprite,
 	})),
 );
+const ExampleAudioRestoration = lazy(() =>
+	import("./examples/audioRestoration/ExampleAudioRestoration").then((m) => ({
+		default: m.ExampleAudioRestoration,
+	})),
+);
 const ExampleBenchmark = lazy(() =>
 	import("./examples/benchmark/ExampleBenchmark").then((m) => ({
 		default: m.ExampleBenchmark,
@@ -306,6 +311,14 @@ const examples: {
 		sourceDir: "aseprite",
 		description:
 			"Loading and playing animations from Aseprite sprite sheets with tag-based animation control.",
+	},
+	{
+		component: <ExampleAudioRestoration />,
+		label: "Audio Restoration Lab",
+		path: "audio-restoration",
+		sourceDir: "audioRestoration",
+		description:
+			"Web Audio synthesis of a damaged ten-second recording, repaired with bypassable high-pass, low-pass, notch, gate and soft-clip nodes, with live meters and offline WAV export.",
 	},
 	{
 		component: <ExampleBenchmark />,

@@ -1,0 +1,172 @@
+/*
+ * melonJS — audio restoration lab layout.
+ * Copyright (C) 2011 - 2026 AltByte Pte Ltd — MIT License.
+ *
+ * The melonJS canvas is a thin title strip at the top of the fixed
+ * `#stage`; the scrollable control panel sits below it and holds every
+ * DOM control, meter and readout.
+ */
+
+.ar-panel {
+	position: fixed;
+	top: 41px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow-y: auto;
+	box-sizing: border-box;
+	padding: 140px 20px 32px;
+	background: #202020;
+	color: #e0e0e6;
+	font-size: 13px;
+}
+
+.ar-intro {
+	max-width: 960px;
+	margin: 0 auto 16px;
+	color: #9a9aa8;
+	line-height: 1.5;
+}
+
+.ar-toolbar {
+	max-width: 960px;
+	margin: 0 auto 18px;
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.ar-button {
+	padding: 8px 16px;
+	border-radius: 5px;
+	border: 1px solid #444;
+	background: #2c2c34;
+	color: #e0e0e6;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.ar-button:hover:not(:disabled) {
+	border-color: #82c743;
+}
+
+.ar-button:disabled {
+	opacity: 0.55;
+	cursor: default;
+}
+
+.ar-primary {
+	background: #2f4a23;
+	border-color: #82c743;
+}
+
+.ar-meters {
+	max-width: 960px;
+	margin: 0 auto 22px;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.ar-meter {
+	background: #1b1b22;
+	border: 1px solid #33333d;
+	border-radius: 8px;
+	padding: 12px;
+}
+
+.ar-meter header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.ar-meter h3 {
+	margin: 0;
+	font-size: 14px;
+}
+
+.ar-clips {
+	color: #9a9aa8;
+}
+
+.ar-clips strong {
+	color: #ffb04a;
+}
+
+.ar-canvas {
+	width: 100%;
+	height: 90px;
+	display: block;
+	background: #14141a;
+	border-radius: 4px;
+	margin-bottom: 8px;
+}
+
+.ar-controls {
+	max-width: 960px;
+	margin: 0 auto 22px;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px 24px;
+}
+
+.ar-slider {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.ar-slider span {
+	display: flex;
+	justify-content: space-between;
+	color: #c8c8d2;
+}
+
+.ar-slider strong {
+	color: #7fd1ff;
+	font-weight: 600;
+}
+
+.ar-slider input[type="range"] {
+	width: 100%;
+	accent-color: #82c743;
+}
+
+.ar-bypass {
+	max-width: 960px;
+	margin: 0 auto 18px;
+	border: 1px solid #33333d;
+	border-radius: 8px;
+	padding: 12px 16px;
+	display: flex;
+	gap: 18px;
+	flex-wrap: wrap;
+}
+
+.ar-bypass legend {
+	padding: 0 6px;
+	color: #9a9aa8;
+}
+
+.ar-check {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
+}
+
+.ar-check input {
+	accent-color: #ffb04a;
+}
+
+.ar-export-info {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 10px 14px;
+	border-radius: 6px;
+	background: #1b2a1b;
+	border: 1px solid #82c743;
+	color: #bde8a8;
+}
