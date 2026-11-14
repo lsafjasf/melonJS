@@ -238,6 +238,11 @@ const ExampleSpine = lazy(() =>
 		default: m.ExampleSpine,
 	})),
 );
+const ExampleStationTapes = lazy(() =>
+	import("./examples/stationTapes/ExampleStationTapes").then((m) => ({
+		default: m.ExampleStationTapes,
+	})),
+);
 const ExampleShaderEffects = lazy(() =>
 	import("./examples/shaderEffects/ExampleShaderEffects").then((m) => ({
 		default: m.ExampleShaderEffects,
@@ -672,6 +677,14 @@ const examples: {
 		sourceDir: "spine",
 		description:
 			"Loading and playing Spine skeletal animations with the @melonjs/spine-plugin through custom WebGL Batcher integration.",
+	},
+	{
+		component: <ExampleStationTapes />,
+		label: "Station Tapes",
+		path: "station-tapes",
+		sourceDir: "stationTapes",
+		description:
+			"An audio-deduction game: six procedurally synthesised platform recordings, shuffled — reorder them and mark the key moments by ear. Same seed, same case.",
 	},
 	{
 		component: <ExampleSVGShapes />,
