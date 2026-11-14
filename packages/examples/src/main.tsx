@@ -43,6 +43,11 @@ const ExampleParticleEditor = lazy(() =>
 		default: m.ExampleParticleEditor,
 	})),
 );
+const ExamplePaperPuppet = lazy(() =>
+	import("./examples/paperPuppet/ExamplePaperPuppet").then((m) => ({
+		default: m.ExamplePaperPuppet,
+	})),
+);
 const ExampleParticleReferenceSpace = lazy(() =>
 	import(
 		"./examples/particleReferenceSpace/ExampleParticleReferenceSpace"
@@ -330,6 +335,14 @@ const examples: {
 		sourceDir: "blendModeRenderables",
 		description:
 			"The same blend mode applied to a sprite, text, a shape fill, particles and an image layer.",
+	},
+	{
+		component: <ExamplePaperPuppet />,
+		label: "Paper Puppet Show",
+		path: "paper-puppet",
+		sourceDir: "paperPuppet",
+		description:
+			"A two-player articulated paper puppet: body, head and both arms share one joint chain, with five timed poses, scoring and procedural paper audio.",
 	},
 	{
 		component: <ExampleParticleEditor />,

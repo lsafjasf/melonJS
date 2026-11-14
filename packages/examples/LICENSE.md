@@ -244,3 +244,15 @@ glyph coverage thresholded to hard edges and the game's own ramp and outline
 baked in. CC BY-NC-SA 4.0 permits the adaptation and requires it to carry the
 same license, which it does: the same attribution, share-alike and
 non-commercial terms apply to them as to the face they come from.
+
+### `paperPuppet` example
+
+The stage, paper texture, puppet, joint rig and all sound are generated at run
+time and are covered by the MIT license above.
+
+The Chinese display text uses a glyph subset of **Noto Sans SC**, copyright
+2018 The Noto Project Authors (<https://github.com/notofonts/noto-fonts>),
+licensed under the **SIL Open Font License 1.1**
+(<https://openfontlicense.org>). The subset was generated with Google Fonts'
+text-subsetting API for the characters this example displays. The full license
+ships beside the font as `fonts/OFL.txt`.
