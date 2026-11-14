@@ -43,6 +43,11 @@ const ExampleParticleEditor = lazy(() =>
 		default: m.ExampleParticleEditor,
 	})),
 );
+const ExampleAtlasPacker = lazy(() =>
+	import("./examples/atlasPacker/ExampleAtlasPacker").then((m) => ({
+		default: m.ExampleAtlasPacker,
+	})),
+);
 const ExampleParticleReferenceSpace = lazy(() =>
 	import(
 		"./examples/particleReferenceSpace/ExampleParticleReferenceSpace"
@@ -338,6 +343,14 @@ const examples: {
 		sourceDir: "particleEditor",
 		description:
 			"Build a particle effect from a preset, a texture or your own sprite, in 2D or 3D, and copy the code into your game.",
+	},
+	{
+		component: <ExampleAtlasPacker />,
+		label: "Atlas Packer",
+		path: "atlas-packer",
+		sourceDir: "atlasPacker",
+		description:
+			"Batch-pack PNGs or 40 built-in icons into a configurable atlas with rotation, padding, margin and trimming; live utilization, sortable file list, PNG + JSON export.",
 	},
 	{
 		component: <ExampleParticleReferenceSpace />,

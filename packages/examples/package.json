@@ -8,6 +8,7 @@
 		"build": "vite build",
 		"backends": "node scripts/backends.mjs",
 		"sprites": "node scripts/generate-physics-shape-sprites.mjs",
+		"test": "vitest run",
 		"test:types": "tsc"
 	},
 	"dependencies": {
@@ -28,6 +29,9 @@
 		"react-router-dom": "^7.18.1",
 		"tsconfig": "workspace:^",
 		"typescript": "^6.0.2",
-		"vite": "8.1.5"
+		"vite": "8.1.5",
+		"@vitest/browser": "^4.1.11",
+		"@vitest/browser-playwright": "^4.1.11",
+		"vitest": "^4.1.11"
 	}
 }

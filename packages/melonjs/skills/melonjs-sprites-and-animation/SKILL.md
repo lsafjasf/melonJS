@@ -143,6 +143,14 @@ Atlases matter for performance: the GPU batchers bind several textures at once
 but once a frame crosses that many distinct textures the batch has to flush.
 Packing into one atlas keeps everything on a single binding.
 
+Need an atlas but have only loose PNGs? The examples site ships an **Atlas
+Packer** (`atlas-packer`): batch-load PNGs (or use its 40 generated icons),
+pack into a configurable page with rotation, padding, inside margin, alpha
+trimming and a max width, then export the PNG plus a TexturePacker-compatible
+JSON that loads straight through `new TextureAtlas(...)`. The JSON records each
+frame's original size, its trim rect (`spriteSourceSize`) and its atlas
+placement, so a trimmed or rotated slice can be restored pixel-for-pixel.
+
 ## Visual properties
 
 ```js
@@ -221,6 +229,7 @@ Two consequences:
 | a console warning `addAnimation("walk"): no frame … in the texture`, or a `TypeError` reading `delay` / `offset` on an older melonJS | a frame number or name the sheet or atlas does not have (often an atlas re-exported without one of its images): fix the frame list or re-export the atlas |
 | `this` is wrong in a `flicker(ms, callback)` callback, or a flicker started from it stops at once | before 20.13.0 the callback ran on an internal object and the flicker was stopped after it; now `this` is the sprite and the flicker has already ended |
 | sprites do not batch | more distinct textures in one frame than `renderer.maxTextures` |
+| a re-imported atlas slice loses its soft alpha edge or sits shifted | the trim rect cut non-zero-alpha pixels or the JSON dropped `spriteSourceSize`; re-export with a trim that keeps every alpha > 0 pixel (the Atlas Packer example's JSON keeps the full trim rect) |
 | nine-slice corners stretch anyway | `insetX`/`insetY` instead of `insetx`/`insety` |
 
 ## Related skills
