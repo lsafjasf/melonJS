@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>十二秒动画编辑器 — 月亮 · 纸船 · 小人</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<header>
+		<h1>十二秒动画编辑器</h1>
+		<div class="transport">
+			<button id="btn-play" type="button">▶ 播放</button>
+			<button id="btn-stop" type="button">⏹ 停止</button>
+			<label class="loop-toggle">
+				<input id="chk-loop" type="checkbox" checked /> 循环
+			</label>
+			<label class="loop-toggle">
+				<input id="chk-sound" type="checkbox" checked /> 声音
+			</label>
+			<span id="time-display" class="time-display">0.00 / 12.00 s</span>
+		</div>
+		<div class="io">
+			<button id="btn-save" type="button">💾 保存工程</button>
+			<button id="btn-load" type="button">📂 载入工程</button>
+			<button id="btn-reset" type="button">↺ 重置示例</button>
+			<input id="file-input" type="file" accept="application/json,.json" hidden />
+		</div>
+	</header>
+
+	<main>
+		<section class="stage-wrap">
+			<canvas id="stage" width="960" height="540"></canvas>
+		</section>
+
+		<section class="panel">
+			<div class="object-tabs" id="object-tabs"></div>
+
+			<div class="props" id="props">
+				<label>X <input data-prop="x" type="number" step="1" /></label>
+				<label>Y <input data-prop="y" type="number" step="1" /></label>
+				<label>旋转° <input data-prop="rotation" type="number" step="1" /></label>
+				<label>缩放 <input data-prop="scale" type="number" step="0.05" min="0.05" /></label>
+				<label>透明度 <input data-prop="opacity" type="number" step="0.05" min="0" max="1" /></label>
+			</div>
+
+			<div class="keyframe-actions">
+				<button id="btn-add-kf" type="button">◆ 在播放头添加关键帧</button>
+				<button id="btn-del-kf" type="button" disabled>✕ 删除选中关键帧</button>
+				<span id="kf-status" class="kf-status">未选中关键帧</span>
+			</div>
+
+			<div class="timeline" id="timeline">
+				<canvas id="ruler" height="26"></canvas>
+				<div id="tracks"></div>
+				<div id="playhead"></div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>
+			操作：拖动时间轴上的播放头查看实时插值；点击 ◆ 选中关键帧（再次点击其他 ◆ 即重选）；
+			修改上方属性后点「添加关键帧」写入当前时刻；Delete 键删除选中关键帧。
+			风声贯穿全程，桨声在纸船过河时响起，提示钟在小人出现时敲响。
+		</p>
+	</footer>
+
+	<script type="module" src="editor.js"></script>
+</body>
+</html>
