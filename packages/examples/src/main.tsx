@@ -258,6 +258,11 @@ const ExampleSVGShapes = lazy(() =>
 		default: m.ExampleSVGShapes,
 	})),
 );
+const ExampleSubtitleTiming = lazy(() =>
+	import("./examples/subtitleTiming/ExampleSubtitleTiming").then((m) => ({
+		default: m.ExampleSubtitleTiming,
+	})),
+);
 const ExampleText = lazy(() =>
 	import("./examples/text/ExampleText").then((m) => ({
 		default: m.ExampleText,
@@ -720,6 +725,14 @@ const examples: {
 		sourceDir: "video",
 		description:
 			"Video playback using the asset loader and Sprite class to display an MP4 video on canvas.",
+	},
+	{
+		component: <ExampleSubtitleTiming />,
+		label: "Subtitle Timing",
+		path: "subtitle-timing",
+		sourceDir: "subtitleTiming",
+		description:
+			"A generated 30-second scene and waveform with draggable cue timing, overlap warnings, and WebVTT round-tripping.",
 	},
 	{
 		component: <ExampleWaterOverworld />,

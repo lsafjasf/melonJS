@@ -26,6 +26,17 @@ SOFTWARE.
 
 ## Third-party assets
 
+### `subtitleTiming` example
+
+The Chinese UI font subset
+`public/assets/subtitle-timing/noto-sans-sc-subset.woff2` is derived from
+**Noto Sans SC**, published by Google under the **SIL Open Font License 1.1**:
+
+<https://fonts.google.com/noto/specimen/Noto+Sans+SC> ·
+<https://openfontlicense.org/>
+
+It contains only the glyphs used by the example and its default subtitles.
+
 ### `aquarium` example
 
 The texture atlas in `public/assets/aquarium/aquarium.webp` was contributed by
