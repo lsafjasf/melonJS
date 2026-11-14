@@ -93,6 +93,11 @@ const ExampleHelloWorld = lazy(() =>
 		default: m.ExampleHelloWorld,
 	})),
 );
+const ExampleThermalControl = lazy(() =>
+	import("./examples/thermalControl/ExampleThermalControl").then((m) => ({
+		default: m.ExampleThermalControl,
+	})),
+);
 const ExampleWebGPU = lazy(() =>
 	import("./examples/webgpu/ExampleWebGPU").then((m) => ({
 		default: m.ExampleWebGPU,
@@ -425,6 +430,14 @@ const examples: {
 		sourceDir: "helloWorld",
 		description:
 			"Minimal setup showing engine initialization, viewport configuration, and text rendering.",
+	},
+	{
+		component: <ExampleThermalControl />,
+		label: "Thermal Control",
+		path: "thermal-control",
+		sourceDir: "thermalControl",
+		description:
+			"A ship crosses into sunlight: manage coolant valves, radiator deployment and device switches to keep the crew cabin safe for 120 seconds.",
 	},
 	{
 		component: <ExampleWebGPU />,
