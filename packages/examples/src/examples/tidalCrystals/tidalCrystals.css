@@ -1,0 +1,404 @@
+/*
+ * melonJS — Tidal Crystals example.
+ * Copyright (C) 2011 - 2026 AltByte Pte Ltd — MIT License.
+ */
+
+#screen > .tc-hud {
+	position: absolute;
+	inset: 0;
+	z-index: 10;
+	pointer-events: none;
+	color: rgba(234, 249, 250, 0.94);
+	font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+	letter-spacing: 0.04em;
+	--tc-accent: #9fe7df;
+}
+
+.tc-hud * {
+	box-sizing: border-box;
+}
+
+.tc-vignette {
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(180deg, rgba(2, 8, 12, 0.28), transparent 22%),
+		radial-gradient(
+			ellipse at 50% 54%,
+			transparent 42%,
+			rgba(0, 5, 10, 0.38) 100%
+		);
+	transition: background-color 0.4s ease;
+}
+
+.tc-hud[data-paused="true"] .tc-vignette {
+	background-color: rgba(2, 8, 12, 0.18);
+}
+
+.tc-brand {
+	position: absolute;
+	top: 28px;
+	left: 30px;
+	padding-left: 18px;
+	text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+}
+
+.tc-brand::before {
+	content: "";
+	position: absolute;
+	top: 4px;
+	bottom: 4px;
+	left: 0;
+	width: 3px;
+	border-radius: 2px;
+	background: var(--tc-accent);
+	box-shadow: 0 0 18px color-mix(in srgb, var(--tc-accent) 60%, transparent);
+	transition: background-color 0.6s ease;
+}
+
+.tc-kicker {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: color-mix(in srgb, var(--tc-accent) 82%, white);
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.18em;
+}
+
+.tc-pip {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: var(--tc-accent);
+	box-shadow: 0 0 12px var(--tc-accent);
+	animation: tc-pulse 2.4s ease-in-out infinite;
+}
+
+.tc-brand h1 {
+	margin: 7px 0 4px;
+	color: rgba(247, 253, 253, 0.98);
+	font-size: clamp(26px, 2.6vw, 38px);
+	font-weight: 300;
+	letter-spacing: 0.1em;
+	line-height: 0.98;
+}
+
+.tc-brand h1 em {
+	color: var(--tc-accent);
+	font-style: normal;
+	font-weight: 700;
+	transition: color 0.6s ease;
+}
+
+.tc-brand p {
+	margin: 8px 0 0;
+	color: rgba(190, 224, 228, 0.58);
+	font-size: 9px;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.tc-readouts {
+	position: absolute;
+	top: 27px;
+	right: 30px;
+	display: flex;
+	gap: 9px;
+}
+
+.tc-card {
+	width: 112px;
+	height: 64px;
+	padding: 11px 13px;
+	border: 1px solid rgba(202, 241, 246, 0.14);
+	border-radius: 8px;
+	background: linear-gradient(
+		150deg,
+		rgba(8, 22, 29, 0.72),
+		rgba(5, 13, 18, 0.5)
+	);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 7px 24px rgba(0, 0, 0, 0.16);
+}
+
+.tc-card-label {
+	display: block;
+	margin-bottom: 5px;
+	color: rgba(193, 228, 233, 0.55);
+	font-size: 8px;
+	font-weight: 700;
+	letter-spacing: 0.17em;
+}
+
+.tc-card strong {
+	display: inline-block;
+	color: rgba(245, 252, 252, 0.97);
+	font-size: 21px;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	line-height: 1;
+}
+
+.tc-card small {
+	margin-left: 4px;
+	color: rgba(197, 229, 233, 0.5);
+	font-size: 8px;
+	font-weight: 700;
+}
+
+.tc-card-mode {
+	width: 104px;
+}
+
+.tc-card-mode strong {
+	color: var(--tc-accent);
+	font-size: 17px;
+	transition: color 0.6s ease;
+}
+
+.tc-rail {
+	position: absolute;
+	top: 50%;
+	left: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 7px;
+	transform: translateY(-50%);
+	color: rgba(194, 227, 231, 0.42);
+	font-size: 7px;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	writing-mode: vertical-rl;
+}
+
+.tc-rail-track {
+	position: relative;
+	width: 1px;
+	height: 132px;
+	background: linear-gradient(
+		180deg,
+		rgba(201, 244, 247, 0.4),
+		rgba(201, 244, 247, 0.06)
+	);
+}
+
+.tc-rail-track i {
+	position: absolute;
+	left: 50%;
+	width: 13px;
+	height: 2px;
+	background: var(--tc-accent);
+	box-shadow: 0 0 11px var(--tc-accent);
+	transform: translate(-50%, 50%);
+	transition:
+		bottom 0.3s ease,
+		background-color 0.6s ease;
+}
+
+.tc-footer {
+	position: absolute;
+	right: 30px;
+	bottom: 24px;
+	left: 30px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 18px;
+}
+
+.tc-hint {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 14px;
+	max-width: min(650px, 62vw);
+	padding: 10px 14px;
+	border: 1px solid rgba(202, 241, 246, 0.1);
+	border-radius: 7px;
+	background: rgba(5, 15, 20, 0.52);
+	backdrop-filter: blur(8px);
+	color: rgba(188, 221, 225, 0.42);
+	font-size: 8px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+}
+
+.tc-hint b {
+	color: rgba(226, 245, 247, 0.78);
+	font-weight: 700;
+}
+
+.tc-actions {
+	display: flex;
+	gap: 8px;
+}
+
+.tc-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+	height: 37px;
+	padding: 0 13px;
+	border: 1px solid rgba(202, 241, 246, 0.16);
+	border-radius: 18px;
+	background: rgba(5, 15, 20, 0.6);
+	backdrop-filter: blur(10px);
+	color: rgba(230, 246, 248, 0.8);
+	font: inherit;
+	font-size: 9px;
+	font-weight: 700;
+	letter-spacing: 0.13em;
+	cursor: pointer;
+	pointer-events: auto;
+	transition:
+		border-color 0.2s ease,
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+.tc-button:hover {
+	border-color: color-mix(in srgb, var(--tc-accent) 65%, transparent);
+	background: rgba(10, 28, 35, 0.8);
+	color: white;
+}
+
+.tc-button:focus-visible {
+	outline: 2px solid var(--tc-accent);
+	outline-offset: 3px;
+}
+
+.tc-button-primary {
+	border-color: color-mix(in srgb, var(--tc-accent) 48%, transparent);
+	color: color-mix(in srgb, var(--tc-accent) 80%, white);
+}
+
+.tc-button-dot {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: var(--tc-accent);
+	box-shadow: 0 0 9px var(--tc-accent);
+}
+
+.tc-button kbd {
+	display: inline-grid;
+	place-items: center;
+	min-width: 18px;
+	height: 18px;
+	padding: 0 4px;
+	border: 1px solid rgba(210, 240, 244, 0.16);
+	border-radius: 5px;
+	color: rgba(210, 238, 241, 0.5);
+	font: inherit;
+	font-size: 8px;
+}
+
+.tc-toast {
+	position: absolute;
+	bottom: 76px;
+	left: 50%;
+	padding: 8px 14px;
+	border: 1px solid rgba(202, 241, 246, 0.16);
+	border-radius: 15px;
+	background: rgba(5, 15, 20, 0.74);
+	color: var(--tc-accent);
+	font-size: 9px;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	opacity: 0;
+	transform: translate(-50%, 7px);
+	transition:
+		opacity 0.2s ease,
+		transform 0.2s ease;
+}
+
+.tc-toast[data-visible="true"] {
+	opacity: 1;
+	transform: translate(-50%, 0);
+}
+
+.tc-paused {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 7px;
+	padding: 18px 30px 16px;
+	border: 1px solid rgba(206, 242, 246, 0.16);
+	border-radius: 10px;
+	background: rgba(3, 11, 16, 0.64);
+	backdrop-filter: blur(8px);
+	opacity: 0;
+	transform: translate(-50%, -46%) scale(0.97);
+	transition:
+		opacity 0.22s ease,
+		transform 0.22s ease;
+}
+
+.tc-paused span {
+	color: rgba(242, 252, 252, 0.92);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.26em;
+}
+
+.tc-paused small {
+	color: color-mix(in srgb, var(--tc-accent) 65%, transparent);
+	font-size: 7px;
+	font-weight: 700;
+	letter-spacing: 0.18em;
+}
+
+.tc-hud[data-paused="true"] .tc-paused {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.tc-hud[data-paused="true"] .tc-pip {
+	animation-play-state: paused;
+}
+
+@keyframes tc-pulse {
+	0%,
+	100% {
+		opacity: 0.55;
+		transform: scale(0.85);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.15);
+	}
+}
+
+@media (max-width: 900px) {
+	.tc-readouts .tc-card:nth-child(3) {
+		display: none;
+	}
+
+	.tc-hint span:nth-child(n + 4) {
+		display: none;
+	}
+
+	.tc-rail {
+		display: none;
+	}
+
+	.tc-brand h1 {
+		font-size: 25px;
+	}
+}
+
+@media (max-width: 620px) {
+	.tc-brand p,
+	.tc-hint {
+		display: none;
+	}
+
+	.tc-readouts .tc-card:nth-child(2) {
+		display: none;
+	}
+}

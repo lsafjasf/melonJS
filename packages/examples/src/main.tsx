@@ -291,6 +291,11 @@ const ExampleWhacAMole = lazy(() =>
 		default: m.ExampleWhacAMole,
 	})),
 );
+const ExampleTidalCrystals = lazy(() =>
+	import("./examples/tidalCrystals/ExampleTidalCrystals").then((m) => ({
+		default: m.ExampleTidalCrystals,
+	})),
+);
 
 const examples: {
 	label: string;
@@ -728,6 +733,14 @@ const examples: {
 		sourceDir: "waterOverworld",
 		description:
 			"Side-scroller overworld with a refracting pond — the screen_texture / screen_uv / noise_uv shader builtins.",
+	},
+	{
+		component: <ExampleTidalCrystals />,
+		label: "Tidal Crystals",
+		path: "tidal-crystals",
+		sourceDir: "tidalCrystals",
+		description:
+			"Orbit a procedurally generated crystal reef as the tide rises. Custom WebGL2 water, caustics, depth fog and rim light, with generative Web Audio.",
 	},
 	{
 		component: <ExampleWhacAMole />,
