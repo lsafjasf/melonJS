@@ -68,6 +68,11 @@ const ExampleCompressedTextures = lazy(() =>
 		(m) => ({ default: m.ExampleCompressedTextures }),
 	),
 );
+const ExampleCompositor = lazy(() =>
+	import("./examples/compositor/ExampleCompositor").then((m) => ({
+		default: m.ExampleCompositor,
+	})),
+);
 const ExampleDeviceTest = lazy(() =>
 	import("./examples/deviceTest/ExampleDeviceTest").then((m) => ({
 		default: m.ExampleDeviceTest,
@@ -385,6 +390,14 @@ const examples: {
 		sourceDir: "compressedTextures",
 		description:
 			"Detect and display GPU-supported compressed texture formats (S3TC, ASTC, ETC2, PVRTC, BPTC).",
+	},
+	{
+		component: <ExampleCompositor />,
+		label: "Layer Compositor",
+		path: "layer-compositor",
+		sourceDir: "compositor",
+		description:
+			"A twelve-second, three-layer compositor: dust, skyline and fog with independent displacement, blur, color and opacity keyframes, JSON projects, Web Audio sync and PNG export.",
 	},
 	{
 		component: <ExampleDeviceTest />,
