@@ -43,6 +43,11 @@ const ExampleParticleEditor = lazy(() =>
 		default: m.ExampleParticleEditor,
 	})),
 );
+const ExampleIntroComposer = lazy(() =>
+	import("./examples/introComposer/ExampleIntroComposer").then((m) => ({
+		default: m.ExampleIntroComposer,
+	})),
+);
 const ExampleParticleReferenceSpace = lazy(() =>
 	import(
 		"./examples/particleReferenceSpace/ExampleParticleReferenceSpace"
@@ -338,6 +343,14 @@ const examples: {
 		sourceDir: "particleEditor",
 		description:
 			"Build a particle effect from a preset, a texture or your own sprite, in 2D or 3D, and copy the code into your game.",
+	},
+	{
+		component: <ExampleIntroComposer />,
+		label: "Procedural Intro Composer",
+		path: "intro-composer",
+		sourceDir: "introComposer",
+		description:
+			"A 12-second keyframeable title sequence with a Canvas ripple field, type and light sweeps, plus a Web Audio score and MediaRecorder WebM export.",
 	},
 	{
 		component: <ExampleParticleReferenceSpace />,
