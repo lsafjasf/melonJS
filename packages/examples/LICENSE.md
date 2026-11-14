@@ -244,3 +244,15 @@ glyph coverage thresholded to hard edges and the game's own ramp and outline
 baked in. CC BY-NC-SA 4.0 permits the adaptation and requires it to carry the
 same license, which it does: the same attribution, share-alike and
 non-commercial terms apply to them as to the face they come from.
+
+### `canalLock` example
+
+The text face `public/assets/canalLock/NotoSansSC-Subset.woff2` is a subset of
+**Noto Sans CJK SC** from the Noto CJK project:
+
+<https://github.com/notofonts/noto-cjk>
+
+licensed under the **SIL Open Font License 1.1**
+(<https://openfontlicense.org/open-font-license-official-text/>). It is
+subsetted to the Latin, punctuation and Chinese characters used by this
+fixed-scene example; no outlines were otherwise modified.

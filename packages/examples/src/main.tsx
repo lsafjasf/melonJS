@@ -53,6 +53,11 @@ const ExampleAfterBurner = lazy(() =>
 		default: m.ExampleAfterBurner,
 	})),
 );
+const ExampleCanalLock = lazy(() =>
+	import("./examples/canalLock/ExampleCanalLock").then((m) => ({
+		default: m.ExampleCanalLock,
+	})),
+);
 const ExampleJungleRabbit = lazy(() =>
 	import("./examples/jungleRabbit/ExampleJungleRabbit").then((m) => ({
 		default: m.ExampleJungleRabbit,
@@ -354,6 +359,14 @@ const examples: {
 		sourceDir: "afterBurner",
 		description:
 			"Behind-the-plane arcade shooter on Camera3d + 3D Mesh models. Rounds hit by raycast3d, planes collide as Box3d bodies.",
+	},
+	{
+		component: <ExampleCanalLock />,
+		label: "Canal Lock",
+		path: "canal-lock",
+		sourceDir: "canalLock",
+		description:
+			"A three-ship canal lock control room: sequence two lift gates and a drain pump, watch pressure, hull clearance and vortex strength, then reproduce a high-head gate failure.",
 	},
 	{
 		component: <ExampleEarthDefender />,
