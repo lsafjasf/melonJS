@@ -158,6 +158,11 @@ const ExampleEarthDefender = lazy(() =>
 		default: m.ExampleEarthDefender,
 	})),
 );
+const ExampleEstuaryPilot = lazy(() =>
+	import("./examples/estuaryPilot/ExampleEstuaryPilot").then((m) => ({
+		default: m.ExampleEstuaryPilot,
+	})),
+);
 const ExampleGroundShadows = lazy(() =>
 	import("./examples/groundShadows/ExampleGroundShadows").then((m) => ({
 		default: m.ExampleGroundShadows,
@@ -362,6 +367,14 @@ const examples: {
 		sourceDir: "earthDefender",
 		description:
 			"A Stardust tribute: a Camera3d posed from the player's own surface point, blob shadows lying on a sphere through shadowGroundPoint, mesh-hosted ShaderEffect shields, spatial audio and HDR bloom.",
+	},
+	{
+		component: <ExampleEstuaryPilot />,
+		label: "Night Estuary",
+		path: "night-estuary",
+		sourceDir: "estuaryPilot",
+		description:
+			"A seeded night-time estuary run: lay four buoys before the tide floods the bank, fight a cross-current and changing load, and return to the dock. Procedural Canvas water, one boat-lamp Light2d, A*-verified routes and Web Audio synthesis.",
 	},
 	{
 		component: <ExampleJungleRabbit />,
