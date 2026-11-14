@@ -213,6 +213,11 @@ const ExamplePoolMatter = lazy(() =>
 		default: m.ExamplePoolMatter,
 	})),
 );
+const ExampleRepairPod = lazy(() =>
+	import("./examples/repairPod/ExampleRepairPod").then((m) => ({
+		default: m.ExampleRepairPod,
+	})),
+);
 const ExampleLineCollision = lazy(() =>
 	import("./examples/lineCollision/ExampleLineCollision").then((m) => ({
 		default: m.ExampleLineCollision,
@@ -609,6 +614,14 @@ const examples: {
 		sourceDir: "pool-matter",
 		description:
 			"Top-down 8-ball pool driven by @melonjs/matter-adapter — drag-to-aim, release-to-strike.",
+	},
+	{
+		component: <ExampleRepairPod />,
+		label: "Repair Pod Docking",
+		path: "repair-pod",
+		sourceDir: "repairPod",
+		description:
+			"Zero-gravity docking across three rotating berths: limited fuel, no auto-brake, and distinct collision, signal-loss and timeout failures.",
 	},
 	{
 		component: <ExampleLineCollision />,
