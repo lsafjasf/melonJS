@@ -18,6 +18,11 @@ const sourceFiles = import.meta.glob("./examples/**/*.{ts,tsx,js}", {
 }) as Record<string, string>;
 
 // lazy-load each example so they are code-split into separate chunks
+const ExamplePseudoColorTerrain = lazy(() =>
+	import("./examples/pseudoColorTerrain/ExamplePseudoColorTerrain").then(
+		(m) => ({ default: m.ExamplePseudoColorTerrain }),
+	),
+);
 const ExampleAseprite = lazy(() =>
 	import("./examples/aseprite/ExampleAseprite").then((m) => ({
 		default: m.ExampleAseprite,
@@ -299,6 +304,14 @@ const examples: {
 	description: string;
 	component: React.ReactElement;
 }[] = [
+	{
+		component: <ExamplePseudoColorTerrain />,
+		label: "False-colour Terrain",
+		path: "pseudo-color-terrain",
+		sourceDir: "pseudoColorTerrain",
+		description:
+			"A seeded four-band terrain processor: assign bands to RGBA, shape three channel curves, inspect pixels, and export an annotated PNG.",
+	},
 	{
 		component: <ExampleAseprite />,
 		label: "Aseprite",
