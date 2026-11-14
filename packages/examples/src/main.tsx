@@ -28,6 +28,11 @@ const ExampleBenchmark = lazy(() =>
 		default: m.ExampleBenchmark,
 	})),
 );
+const ExampleBinauralWorkbench = lazy(() =>
+	import(
+		"./examples/binauralWorkbench/ExampleBinauralWorkbench"
+	).then((m) => ({ default: m.ExampleBinauralWorkbench })),
+);
 const ExampleBlendModes = lazy(() =>
 	import("./examples/blendModes/ExampleBlendModes").then((m) => ({
 		default: m.ExampleBlendModes,
@@ -314,6 +319,14 @@ const examples: {
 		sourceDir: "benchmark",
 		description:
 			"Stress test rendering thousands of animated sprites to measure engine performance.",
+	},
+	{
+		component: <ExampleBinauralWorkbench />,
+		label: "Binaural Listening Workbench",
+		path: "binaural-workbench",
+		sourceDir: "binauralWorkbench",
+		description:
+			"Room acoustics without audio assets: procedural impulse-response convolution, a moving synthetic source, draggable listener with pan/filter/distance cues, dry/wet/binaural modes and offline WAV rendering.",
 	},
 	{
 		component: <ExampleBlendModes />,

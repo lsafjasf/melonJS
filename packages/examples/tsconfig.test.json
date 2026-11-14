@@ -1,0 +1,15 @@
+{
+	"extends": "tsconfig/base.json",
+	"compilerOptions": {
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"skipLibCheck": true,
+		"noEmit": true,
+		"jsx": "react-jsx"
+	},
+	"include": [
+		"./tests",
+		"./src/examples/binauralWorkbench",
+		"./src/examples/utils.tsx",
+		"./vitest.config.ts"
+	]
+}

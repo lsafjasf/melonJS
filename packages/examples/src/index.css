@@ -269,3 +269,56 @@ body:has(#screen canvas) {
 .example-editor .ace_editor {
 	flex: 1;
 }
+
+/* Binaural listening workbench control panel */
+.binaural-panel {
+	position: fixed;
+	top: 56px;
+	left: 16px;
+	z-index: 900;
+	width: 280px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 14px;
+	background: rgba(16, 24, 38, 0.92);
+	border: 1px solid #2f4363;
+	border-radius: 10px;
+	font-size: 13px;
+	pointer-events: auto;
+}
+
+.binaural-row {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.binaural-row span {
+	color: #9fb6d8;
+}
+
+.binaural-panel select,
+.binaural-panel button {
+	padding: 6px 8px;
+	border-radius: 6px;
+	border: 1px solid #3a5178;
+	background: #101a2c;
+	color: #e0e0e0;
+	font: inherit;
+}
+
+.binaural-panel button {
+	cursor: pointer;
+}
+
+.binaural-panel button:disabled {
+	opacity: 0.45;
+	cursor: default;
+}
+
+.binaural-status {
+	margin: 0;
+	color: #82c743;
+	line-height: 1.4;
+}

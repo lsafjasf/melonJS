@@ -8,7 +8,8 @@
 		"build": "vite build",
 		"backends": "node scripts/backends.mjs",
 		"sprites": "node scripts/generate-physics-shape-sprites.mjs",
-		"test:types": "tsc"
+		"test": "vitest run",
+		"test:types": "tsc && tsc -p tsconfig.test.json"
 	},
 	"dependencies": {
 		"@melonjs/debug-plugin": "workspace:*",
