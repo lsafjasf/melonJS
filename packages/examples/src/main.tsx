@@ -88,6 +88,11 @@ const ExampleGraphics = lazy(() =>
 		default: m.ExampleGraphics,
 	})),
 );
+const ExampleGantryCrane = lazy(() =>
+	import("./examples/gantryCrane/ExampleGantryCrane").then((m) => ({
+		default: m.ExampleGantryCrane,
+	})),
+);
 const ExampleHelloWorld = lazy(() =>
 	import("./examples/helloWorld/ExampleHelloWorld").then((m) => ({
 		default: m.ExampleHelloWorld,
@@ -417,6 +422,14 @@ const examples: {
 		sourceDir: "graphics",
 		description:
 			"Drawing primitives: rectangles, circles, ellipses, lines, polygons, and rounded shapes.",
+	},
+	{
+		component: <ExampleGantryCrane />,
+		label: "Gantry Crane Co-op",
+		path: "gantry-crane",
+		sourceDir: "gantryCrane",
+		description:
+			"Two players share one gantry crane: A/D moves the bridge, arrow keys drive the trolley and hoist. Five weighted loads, swinging hook physics, suspended conduit clearance and procedural mechanical rhythms.",
 	},
 	{
 		component: <ExampleHelloWorld />,
