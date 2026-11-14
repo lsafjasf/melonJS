@@ -1,0 +1,350 @@
+/*
+ * melonJS — subtitle editor layout.
+ * Copyright (C) 2011 - 2026 AltByte Pte Ltd — MIT License.
+ *
+ * The engine canvas stays centred in the remaining stage while a control
+ * sidebar occupies the right and the timeline the bottom.
+ */
+body:has(.se-app) {
+	--se-sidebar: 340px;
+	--se-bottom: 250px;
+	--se-top: 41px;
+	--se-panel: #1b1b22;
+	--se-line: #33333d;
+	--se-text: #e0e0e6;
+	--se-muted: #9a9aa8;
+	--se-accent: #82c743;
+	--se-danger: #e05c5c;
+}
+
+body:has(.se-app) #stage {
+	top: var(--se-top);
+	right: var(--se-sidebar);
+	bottom: var(--se-bottom);
+	left: 0;
+}
+
+.se-app {
+	position: fixed;
+	inset: var(--se-top) 0 0 0;
+	color: var(--se-text);
+	font-size: 13px;
+}
+
+.se-sidebar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: var(--se-bottom);
+	width: var(--se-sidebar);
+	box-sizing: border-box;
+	background: var(--se-panel);
+	border-left: 1px solid var(--se-line);
+	padding: 12px;
+	overflow-y: auto;
+}
+
+.se-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-bottom: 10px;
+}
+
+.se-toolbar button,
+.se-nudge-row button,
+.se-delete {
+	background: #2a2a35;
+	color: var(--se-text);
+	border: 1px solid var(--se-line);
+	border-radius: 4px;
+	padding: 5px 10px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.se-toolbar button:hover:not(:disabled),
+.se-nudge-row button:hover,
+.se-delete:hover {
+	border-color: var(--se-accent);
+}
+
+.se-toolbar button:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.se-toolbar button.se-on {
+	border-color: var(--se-accent);
+	color: var(--se-accent);
+}
+
+.se-toolbar-io button {
+	font-weight: 600;
+}
+
+.se-overlap-banner,
+.se-import-error,
+.se-overlap-warning {
+	color: var(--se-danger);
+	font-size: 12px;
+	margin: 4px 0 8px;
+}
+
+.se-cue-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.se-empty {
+	color: var(--se-muted);
+}
+
+.se-cue-row {
+	border: 1px solid var(--se-line);
+	border-radius: 6px;
+	padding: 8px;
+	background: #20202a;
+	cursor: pointer;
+}
+
+.se-cue-active {
+	border-color: var(--se-accent);
+}
+
+.se-cue-row-overlap {
+	border-color: var(--se-danger);
+}
+
+.se-cue-row header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 6px;
+}
+
+.se-cue-index {
+	font-weight: 700;
+	color: var(--se-accent);
+	background: none;
+	border: none;
+	padding: 0;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	text-align: left;
+}
+
+.se-cue-clock {
+	color: var(--se-muted);
+	flex: 1;
+	font-variant-numeric: tabular-nums;
+}
+
+.se-cue-row textarea {
+	width: 100%;
+	box-sizing: border-box;
+	resize: vertical;
+	background: #14141b;
+	color: var(--se-text);
+	border: 1px solid var(--se-line);
+	border-radius: 4px;
+	padding: 6px;
+	font: inherit;
+}
+
+.se-cue-times {
+	display: flex;
+	gap: 8px;
+	margin-top: 6px;
+}
+
+.se-time-field {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	color: var(--se-muted);
+	font-size: 11px;
+}
+
+.se-time-field input {
+	background: #14141b;
+	color: var(--se-text);
+	border: 1px solid var(--se-line);
+	border-radius: 4px;
+	padding: 4px 6px;
+	font-variant-numeric: tabular-nums;
+}
+
+.se-nudge-row {
+	display: flex;
+	gap: 12px;
+	margin-top: 6px;
+}
+
+.se-nudge-group {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	color: var(--se-muted);
+}
+
+.se-bottom {
+	position: absolute;
+	left: 0;
+	right: var(--se-sidebar);
+	bottom: 0;
+	height: var(--se-bottom);
+	background: var(--se-panel);
+	border-top: 1px solid var(--se-line);
+	padding: 10px 16px 14px;
+	box-sizing: border-box;
+}
+
+.se-transport-line {
+	display: flex;
+	gap: 14px;
+	align-items: baseline;
+	margin-bottom: 8px;
+	font-variant-numeric: tabular-nums;
+}
+
+.se-active-caption {
+	color: var(--se-muted);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.se-ruler {
+	position: relative;
+	height: 22px;
+}
+
+.se-tick {
+	position: absolute;
+	top: 0;
+	transform: translateX(-50%);
+	color: var(--se-muted);
+	font-size: 10px;
+	font-variant-numeric: tabular-nums;
+}
+
+.se-tick::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 14px;
+	width: 1px;
+	height: 5px;
+	background: var(--se-line);
+}
+
+.se-tick-major::after {
+	height: 8px;
+	background: var(--se-muted);
+}
+
+.se-track {
+	position: relative;
+	height: 120px;
+	background: #14141b;
+	border: 1px solid var(--se-line);
+	border-radius: 4px;
+	overflow: hidden;
+	touch-action: none;
+	cursor: crosshair;
+}
+
+.se-waveform {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	gap: 1px;
+	padding: 0 2px;
+	pointer-events: none;
+}
+
+.se-wave-bar {
+	flex: 1;
+	min-width: 1px;
+	background: #3a4a55;
+	border-radius: 1px;
+	opacity: 0.7;
+}
+
+.se-loop-range {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background: rgba(130, 199, 67, 0.12);
+	border-left: 1px dashed var(--se-accent);
+	border-right: 1px dashed var(--se-accent);
+	pointer-events: none;
+}
+
+.se-cue-block {
+	position: absolute;
+	top: 26px;
+	height: 64px;
+	background: rgba(130, 199, 67, 0.32);
+	border: 1px solid var(--se-accent);
+	border-radius: 4px;
+	display: flex;
+	align-items: stretch;
+	cursor: grab;
+	min-width: 8px;
+}
+
+.se-cue-block:active {
+	cursor: grabbing;
+}
+
+.se-cue-overlap {
+	background: rgba(224, 92, 92, 0.35);
+	border-color: var(--se-danger);
+}
+
+.se-cue-label {
+	flex: 1;
+	padding: 4px 8px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 11px;
+	line-height: 1.4;
+}
+
+.se-cue-edge {
+	width: 8px;
+	cursor: ew-resize;
+	background: rgba(0, 0, 0, 0.25);
+}
+
+.se-cue-edge:hover {
+	background: rgba(0, 0, 0, 0.45);
+}
+
+.se-playhead {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: #ffd45a;
+	transform: translateX(-1px);
+	pointer-events: none;
+	z-index: 2;
+}
+
+.se-scrub-strip {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 24px;
+	z-index: 1;
+	cursor: pointer;
+}

@@ -43,6 +43,11 @@ const ExampleParticleEditor = lazy(() =>
 		default: m.ExampleParticleEditor,
 	})),
 );
+const ExampleSubtitleEditor = lazy(() =>
+	import("./examples/subtitleEditor/ExampleSubtitleEditor").then((m) => ({
+		default: m.ExampleSubtitleEditor,
+	})),
+);
 const ExampleParticleReferenceSpace = lazy(() =>
 	import(
 		"./examples/particleReferenceSpace/ExampleParticleReferenceSpace"
@@ -338,6 +343,14 @@ const examples: {
 		sourceDir: "particleEditor",
 		description:
 			"Build a particle effect from a preset, a texture or your own sprite, in 2D or 3D, and copy the code into your game.",
+	},
+	{
+		component: <ExampleSubtitleEditor />,
+		label: "Subtitle Editor",
+		path: "subtitle-editor",
+		sourceDir: "subtitleEditor",
+		description:
+			"Align cues on a 40 s timeline: drag in/out points, nudge by the frame, flag overlaps and round-trip WebVTT.",
 	},
 	{
 		component: <ExampleParticleReferenceSpace />,
