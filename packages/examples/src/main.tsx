@@ -48,6 +48,11 @@ const ExampleParticleReferenceSpace = lazy(() =>
 		"./examples/particleReferenceSpace/ExampleParticleReferenceSpace"
 	).then((m) => ({ default: m.ExampleParticleReferenceSpace })),
 );
+const ExamplePopupBook = lazy(() =>
+	import("./examples/popupBook/ExamplePopupBook").then((m) => ({
+		default: m.ExamplePopupBook,
+	})),
+);
 const ExampleAfterBurner = lazy(() =>
 	import("./examples/afterBurner/ExampleAfterBurner").then((m) => ({
 		default: m.ExampleAfterBurner,
@@ -346,6 +351,14 @@ const examples: {
 		sourceDir: "particleReferenceSpace",
 		description:
 			"Particles measured from the emitter, from the world, or from another container.",
+	},
+	{
+		component: <ExamplePopupBook />,
+		label: "2.5D Pop-up Book Editor",
+		path: "popup-book",
+		sourceDir: "popupBook",
+		description:
+			"A paper-theater scene editor drawn entirely with Canvas paths: drag for parallax, move the lamp, edit four layers and loop four keyframes over ten seconds.",
 	},
 	{
 		component: <ExampleAfterBurner />,
