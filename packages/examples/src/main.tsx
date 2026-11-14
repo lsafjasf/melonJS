@@ -93,6 +93,11 @@ const ExampleHelloWorld = lazy(() =>
 		default: m.ExampleHelloWorld,
 	})),
 );
+const ExampleInertialDocking = lazy(() =>
+	import("./examples/inertialDocking/ExampleInertialDocking").then((m) => ({
+		default: m.ExampleInertialDocking,
+	})),
+);
 const ExampleWebGPU = lazy(() =>
 	import("./examples/webgpu/ExampleWebGPU").then((m) => ({
 		default: m.ExampleWebGPU,
@@ -425,6 +430,14 @@ const examples: {
 		sourceDir: "helloWorld",
 		description:
 			"Minimal setup showing engine initialization, viewport configuration, and text rendering.",
+	},
+	{
+		component: <ExampleInertialDocking />,
+		label: "Inertial Docking",
+		path: "inertial-docking",
+		sourceDir: "inertialDocking",
+		description:
+			"Seeded rotating berths, Newtonian drift, pressure-hull damage, procedural Canvas geometry and momentum-driven sound.",
 	},
 	{
 		component: <ExampleWebGPU />,
