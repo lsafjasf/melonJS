@@ -38,6 +38,11 @@ const ExampleBlendModeRenderables = lazy(() =>
 		(m) => ({ default: m.ExampleBlendModeRenderables }),
 	),
 );
+const ExampleCometSurvey = lazy(() =>
+	import("./examples/comet-survey/ExampleCometSurvey").then((m) => ({
+		default: m.ExampleCometSurvey,
+	})),
+);
 const ExampleParticleEditor = lazy(() =>
 	import("./examples/particleEditor/ExampleParticleEditor").then((m) => ({
 		default: m.ExampleParticleEditor,
@@ -330,6 +335,14 @@ const examples: {
 		sourceDir: "blendModeRenderables",
 		description:
 			"The same blend mode applied to a sprite, text, a shape fill, particles and an image layer.",
+	},
+	{
+		component: <ExampleCometSurvey />,
+		label: "Comet Survey",
+		path: "comet-survey",
+		sourceDir: "comet-survey",
+		description:
+			"Long-exposure astrophotography: track a comet with an equatorial mount, manage film and session time. All-procedural Canvas and Web Audio.",
 	},
 	{
 		component: <ExampleParticleEditor />,

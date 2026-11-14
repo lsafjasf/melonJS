@@ -1,0 +1,236 @@
+/* melonJS — Comet Survey example styles (all-procedural, no assets). */
+.comet-survey {
+	min-height: calc(100vh - 41px);
+	background:
+		radial-gradient(1200px 500px at 30% 0%, rgba(30, 50, 90, 0.25), transparent),
+		#05070d;
+	color: #c9d6e8;
+	font-family: "Courier New", ui-monospace, monospace;
+	padding: 18px 32px 32px;
+	box-sizing: border-box;
+}
+
+.cs-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	border-bottom: 1px solid rgba(120, 160, 220, 0.25);
+	padding-bottom: 12px;
+	margin-bottom: 16px;
+}
+
+.cs-title h1 {
+	margin: 0;
+	font-size: 28px;
+	letter-spacing: 6px;
+	color: #e8f1ff;
+}
+
+.cs-title p {
+	margin: 4px 0 0;
+	font-size: 11px;
+	letter-spacing: 2px;
+	color: #7c8fb0;
+}
+
+.cs-status {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+.cs-live {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #57d9ff;
+	box-shadow: 0 0 8px #57d9ff;
+}
+
+.cs-live-exposing {
+	background: #ff5a5a;
+	box-shadow: 0 0 8px #ff5a5a;
+}
+
+.cs-live-success {
+	background: #6effb4;
+	box-shadow: 0 0 8px #6effb4;
+}
+
+.cs-live-failed {
+	background: #ff7a7a;
+	box-shadow: 0 0 8px #ff7a7a;
+}
+
+.cs-plates-count {
+	color: #8cd2ff;
+}
+
+.cs-main {
+	display: flex;
+	gap: 18px;
+	align-items: flex-start;
+}
+
+.cs-viewport {
+	flex: 1 1 auto;
+	min-width: 0;
+	border: 1px solid rgba(120, 160, 220, 0.3);
+	border-radius: 8px;
+	overflow: hidden;
+	background: #02040a;
+}
+
+.cs-viewport canvas {
+	display: block;
+	width: 100%;
+	height: auto;
+	cursor: crosshair;
+}
+
+.cs-hints {
+	display: flex;
+	gap: 22px;
+	padding: 8px 14px;
+	font-size: 11px;
+	letter-spacing: 1px;
+	color: #7c8fb0;
+	border-top: 1px solid rgba(120, 160, 220, 0.2);
+}
+
+.cs-hints b {
+	color: #c9d6e8;
+	margin-right: 6px;
+}
+
+.cs-hint-right {
+	margin-left: auto;
+	color: #8cd2ff;
+}
+
+.cs-panel {
+	flex: 0 0 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.cs-box {
+	border: 1px solid rgba(120, 160, 220, 0.25);
+	border-radius: 6px;
+	padding: 10px 12px;
+	background: rgba(10, 18, 34, 0.6);
+}
+
+.cs-row {
+	display: flex;
+	gap: 12px;
+}
+
+.cs-row .cs-box {
+	flex: 1;
+}
+
+.cs-label {
+	display: block;
+	font-size: 10px;
+	letter-spacing: 2px;
+	color: #7c8fb0;
+	margin-bottom: 6px;
+}
+
+.cs-box strong {
+	font-size: 22px;
+	color: #e8f1ff;
+	letter-spacing: 1px;
+}
+
+.cs-box strong.ok {
+	color: #6effb4;
+	font-size: 15px;
+}
+
+.cs-box strong.warn {
+	color: #ffd27a;
+	font-size: 15px;
+}
+
+.cs-box small {
+	display: block;
+	margin-top: 6px;
+	font-size: 10px;
+	letter-spacing: 1px;
+	color: #8fa3c4;
+}
+
+.cs-pips {
+	display: flex;
+	gap: 5px;
+	margin-top: 8px;
+}
+
+.cs-pips i {
+	width: 18px;
+	height: 8px;
+	background: #1c2a44;
+	border-radius: 2px;
+}
+
+.cs-pips i.on {
+	background: #ffc46e;
+	box-shadow: 0 0 6px rgba(255, 196, 110, 0.6);
+}
+
+.cs-scale {
+	position: relative;
+	height: 6px;
+	margin-top: 10px;
+	background: #16223a;
+	border-radius: 3px;
+}
+
+.cs-scale-fill {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background: linear-gradient(90deg, #234, #57d9ff);
+	border-radius: 3px;
+}
+
+.cs-scale-threshold {
+	position: absolute;
+	top: -3px;
+	bottom: -3px;
+	width: 2px;
+	background: #6effb4;
+}
+
+.cs-log-row {
+	display: flex;
+	justify-content: space-between;
+	font-size: 11px;
+	padding: 5px 0;
+	border-bottom: 1px dashed rgba(120, 160, 220, 0.18);
+}
+
+.cs-log-row em {
+	font-style: normal;
+	color: #7c8fb0;
+}
+
+.cs-log-row em.accepted {
+	color: #6effb4;
+}
+
+.cs-log-row em.rejected {
+	color: #ff7a7a;
+}
+
+.cs-foot {
+	font-size: 11px;
+	line-height: 1.5;
+	color: #7c8fb0;
+	margin: 0;
+}
