@@ -123,6 +123,11 @@ const ExampleAquarium = lazy(() =>
 		default: m.ExampleAquarium,
 	})),
 );
+const ExampleAirlockDispatch = lazy(() =>
+	import("./examples/airlockDispatch/ExampleAirlockDispatch").then((m) => ({
+		default: m.ExampleAirlockDispatch,
+	})),
+);
 const ExampleHdr = lazy(() =>
 	import("./examples/hdr/ExampleHdr").then((m) => ({
 		default: m.ExampleHdr,
@@ -736,6 +741,14 @@ const examples: {
 		sourceDir: "whac-a-mole",
 		description:
 			"Complete mini-game with sprite animations, input handling, scoring, and audio.",
+	},
+	{
+		component: <ExampleAirlockDispatch />,
+		label: "Airlock Dispatch",
+		path: "airlock-dispatch",
+		sourceDir: "airlockDispatch",
+		description:
+			"Schedule three lifts across five shared pressure doors. Route eight oxygen, medical, energy and supply pods before their windows close.",
 	},
 ];
 
