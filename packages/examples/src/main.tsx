@@ -291,6 +291,11 @@ const ExampleWhacAMole = lazy(() =>
 		default: m.ExampleWhacAMole,
 	})),
 );
+const ExampleSpotlight = lazy(() =>
+	import("./examples/spotlight/ExampleSpotlight").then((m) => ({
+		default: m.ExampleSpotlight,
+	})),
+);
 
 const examples: {
 	label: string;
@@ -736,6 +741,14 @@ const examples: {
 		sourceDir: "whac-a-mole",
 		description:
 			"Complete mini-game with sprite animations, input handling, scoring, and audio.",
+	},
+	{
+		component: <ExampleSpotlight />,
+		label: "The Last Spotlight",
+		path: "last-spotlight",
+		sourceDir: "spotlight",
+		description:
+			"A one-light stage performance: follow three actors through eight cues, switch warm, cool and narrow beams, and keep the light off the window and the audience.",
 	},
 ];
 
