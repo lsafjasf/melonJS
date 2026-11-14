@@ -291,6 +291,11 @@ const ExampleWhacAMole = lazy(() =>
 		default: m.ExampleWhacAMole,
 	})),
 );
+const ExampleRhythmKitchen = lazy(() =>
+	import("./examples/rhythmKitchen/ExampleRhythmKitchen").then((m) => ({
+		default: m.ExampleRhythmKitchen,
+	})),
+);
 
 const examples: {
 	label: string;
@@ -736,6 +741,14 @@ const examples: {
 		sourceDir: "whac-a-mole",
 		description:
 			"Complete mini-game with sprite animations, input handling, scoring, and audio.",
+	},
+	{
+		component: <ExampleRhythmKitchen />,
+		label: "Rhythm Kitchen",
+		path: "rhythm-kitchen",
+		sourceDir: "rhythmKitchen",
+		description:
+			"An all-procedural rhythm cooking game: Web Audio beats, frying and boiling cues, Canvas fire and steam, and pause-aware cooking timers.",
 	},
 ];
 
