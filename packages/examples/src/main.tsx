@@ -213,6 +213,11 @@ const ExamplePoolMatter = lazy(() =>
 		default: m.ExamplePoolMatter,
 	})),
 );
+const ExampleSignalRepair = lazy(() =>
+	import("./examples/signalRepair/ExampleSignalRepair").then((m) => ({
+		default: m.ExampleSignalRepair,
+	})),
+);
 const ExampleLineCollision = lazy(() =>
 	import("./examples/lineCollision/ExampleLineCollision").then((m) => ({
 		default: m.ExampleLineCollision,
@@ -609,6 +614,14 @@ const examples: {
 		sourceDir: "pool-matter",
 		description:
 			"Top-down 8-ball pool driven by @melonjs/matter-adapter — drag-to-aim, release-to-strike.",
+	},
+	{
+		component: <ExampleSignalRepair />,
+		label: "Signal Repair",
+		path: "signal-repair",
+		sourceDir: "signalRepair",
+		description:
+			"Patch three procedural Web Audio faults through high-pass, low-pass, delay and gain nodes. Canvas scopes show the live waveform, spectrum and cables; miswiring trips the feedback protection.",
 	},
 	{
 		component: <ExampleLineCollision />,
