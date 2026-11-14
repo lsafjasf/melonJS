@@ -133,6 +133,11 @@ const ExampleHeatHaze = lazy(() =>
 		default: m.ExampleHeatHaze,
 	})),
 );
+const ExampleIceCut = lazy(() =>
+	import("./examples/iceCut/ExampleIceCut").then((m) => ({
+		default: m.ExampleIceCut,
+	})),
+);
 const ExampleLineOfSight = lazy(() =>
 	import("./examples/lineOfSight/ExampleLineOfSight").then((m) => ({
 		default: m.ExampleLineOfSight,
@@ -489,6 +494,14 @@ const examples: {
 		sourceDir: "heatHaze",
 		description:
 			"renderer.toFrameTexture() over a LIT scene: normal-mapped tiles under a moving Light2d, distorted by a rising heat-haze that captures the lit frame.",
+	},
+	{
+		component: <ExampleIceCut />,
+		label: "CRYO CUT",
+		path: "cryo-cut",
+		sourceDir: "iceCut",
+		description:
+			"Two operators, one ice cutter: hold A/D for temperature while the arrow keys trace three per-pixel outlines before the body melts through.",
 	},
 	{
 		component: <ExampleLineOfSight />,
