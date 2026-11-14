@@ -42,6 +42,19 @@ export const createExampleComponent = (createGameFn: CreateGameFn) => {
 				const screen = document.getElementById("screen");
 				if (canvas && screen && !screen.contains(canvas)) {
 					screen.appendChild(canvas);
+				} else if (!canvas) {
+					// A DOM-only example has no engine canvas to re-parent.
+					// Its host element was removed by the StrictMode cleanup,
+					// so boot the example again from scratch.
+					const result = createGameFn();
+					if (result instanceof Promise) {
+						void result.then((teardown) => {
+							currentTeardown =
+								typeof teardown === "function" ? teardown : null;
+						});
+					} else {
+						currentTeardown = typeof result === "function" ? result : null;
+					}
 				}
 			} else if (currentInitFn !== null) {
 				// Cross-example navigation (e.g. `/lineOfSight` → `/plinko`).

@@ -244,3 +244,15 @@ glyph coverage thresholded to hard edges and the game's own ramp and outline
 baked in. CC BY-NC-SA 4.0 permits the adaptation and requires it to carry the
 same license, which it does: the same attribution, share-alike and
 non-commercial terms apply to them as to the face they come from.
+
+### `tidalViewer` example
+
+The interface uses `public/assets/tidalViewer/fonts/NotoSansSC-Regular.woff2`
+and `NotoSansSC-SemiBold.woff2`, subsets of **Noto Sans SC** by Google Inc.
+They are licensed under the **SIL Open Font License 1.1**; the full license
+ships beside the fonts as `fonts/OFL.txt`.
+
+The demo observations in `demo-tidal.csv` are generated for this repository
+and contain deliberately invalid, duplicated and out-of-order rows. They
+describe fictional readings and are not suitable for navigation or
+operational use.

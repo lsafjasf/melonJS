@@ -268,6 +268,11 @@ const ExampleTexturePacker = lazy(() =>
 		default: m.ExampleTexturePacker,
 	})),
 );
+const ExampleTidalViewer = lazy(() =>
+	import("./examples/tidalViewer/ExampleTidalViewer").then((m) => ({
+		default: m.ExampleTidalViewer,
+	})),
+);
 const ExampleTiledMapLoader = lazy(() =>
 	import("./examples/tiledMapLoader/ExampleTiledMapLoader").then((m) => ({
 		default: m.ExampleTiledMapLoader,
@@ -696,6 +701,14 @@ const examples: {
 		sourceDir: "texturePacker",
 		description:
 			"Loading and using TexturePacker atlas for sprite animation and background rendering.",
+	},
+	{
+		component: <ExampleTidalViewer />,
+		label: "Tidal Data Viewer",
+		path: "tidal-viewer",
+		sourceDir: "tidalViewer",
+		description:
+			"Load a tidal CSV, validate and clean it, compare two station curves, drag cursors over a zoomable window, and export the view as PNG or a one-page report.",
 	},
 	{
 		component: <ExampleTiledMapLoader />,

@@ -8,6 +8,7 @@
 		"build": "vite build",
 		"backends": "node scripts/backends.mjs",
 		"sprites": "node scripts/generate-physics-shape-sprites.mjs",
+		"test": "tsx --test test/*.test.ts",
 		"test:types": "tsc"
 	},
 	"dependencies": {
