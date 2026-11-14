@@ -138,6 +138,11 @@ const ExampleLineOfSight = lazy(() =>
 		default: m.ExampleLineOfSight,
 	})),
 );
+const ExampleLighthouseRelay = lazy(() =>
+	import("./examples/lighthouseRelay/ExampleLighthouseRelay").then((m) => ({
+		default: m.ExampleLighthouseRelay,
+	})),
+);
 const ExampleMasking = lazy(() =>
 	import("./examples/masking/ExampleMasking").then((m) => ({
 		default: m.ExampleMasking,
@@ -497,6 +502,14 @@ const examples: {
 		sourceDir: "lineOfSight",
 		description:
 			"Stealth-style vision cone and line-of-sight checks with the portable adapter.raycast API.",
+	},
+	{
+		component: <ExampleLighthouseRelay />,
+		label: "Lighthouse Relay",
+		path: "lighthouse-relay",
+		sourceDir: "lighthouseRelay",
+		description:
+			"Two-player asymmetric relay: P1 reads the berth and sends short/long light pulses, P2 reads the return echo and confirms. Shared heat and turntable wear keep both channels honest.",
 	},
 	{
 		component: <ExampleMasking />,
