@@ -291,6 +291,11 @@ const ExampleWhacAMole = lazy(() =>
 		default: m.ExampleWhacAMole,
 	})),
 );
+const ExampleGeologicalSection = lazy(() =>
+	import("./examples/geologicalSection/ExampleGeologicalSection").then((m) => ({
+		default: m.ExampleGeologicalSection,
+	})),
+);
 
 const examples: {
 	label: string;
@@ -736,6 +741,14 @@ const examples: {
 		sourceDir: "whac-a-mole",
 		description:
 			"Complete mini-game with sprite animations, input handling, scoring, and audio.",
+	},
+	{
+		component: <ExampleGeologicalSection />,
+		label: "Geological Section",
+		path: "geological-section",
+		sourceDir: "geologicalSection",
+		description:
+			"Seed-procedural sedimentary cross-section: 8-12 layers, two faults, three erosion events and a 20 Ma time slider, drawn with Canvas 2D procedural textures.",
 	},
 ];
 
