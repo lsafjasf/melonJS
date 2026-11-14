@@ -88,6 +88,11 @@ const ExampleGraphics = lazy(() =>
 		default: m.ExampleGraphics,
 	})),
 );
+const ExampleShipLock = lazy(() =>
+	import("./examples/shipLock/ExampleShipLock").then((m) => ({
+		default: m.ExampleShipLock,
+	})),
+);
 const ExampleHelloWorld = lazy(() =>
 	import("./examples/helloWorld/ExampleHelloWorld").then((m) => ({
 		default: m.ExampleHelloWorld,
@@ -417,6 +422,14 @@ const examples: {
 		sourceDir: "graphics",
 		description:
 			"Drawing primitives: rectangles, circles, ellipses, lines, polygons, and rounded shapes.",
+	},
+	{
+		component: <ExampleShipLock />,
+		label: "Ship Lock Co-op",
+		path: "ship-lock",
+		sourceDir: "shipLock",
+		description:
+			"Two operators raise a cargo ship through a shared lock chamber: feather the inlet and drain, keep pressure inside the safe band, then hold the level for five seconds before the upper gate opens.",
 	},
 	{
 		component: <ExampleHelloWorld />,
