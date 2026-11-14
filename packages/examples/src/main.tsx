@@ -53,6 +53,11 @@ const ExampleAfterBurner = lazy(() =>
 		default: m.ExampleAfterBurner,
 	})),
 );
+const ExampleIceCoreSurvey = lazy(() =>
+	import("./examples/iceCoreSurvey/ExampleIceCoreSurvey").then((m) => ({
+		default: m.ExampleIceCoreSurvey,
+	})),
+);
 const ExampleJungleRabbit = lazy(() =>
 	import("./examples/jungleRabbit/ExampleJungleRabbit").then((m) => ({
 		default: m.ExampleJungleRabbit,
@@ -354,6 +359,14 @@ const examples: {
 		sourceDir: "afterBurner",
 		description:
 			"Behind-the-plane arcade shooter on Camera3d + 3D Mesh models. Rounds hit by raycast3d, planes collide as Box3d bodies.",
+	},
+	{
+		component: <ExampleIceCoreSurvey />,
+		label: "Ice Core Survey",
+		path: "ice-core-survey",
+		sourceDir: "iceCoreSurvey",
+		description:
+			"A fixed-seed polar expedition: recover three cores, watch fractures spread through the ice, jettison cargo to save the hull, and bring the mass home.",
 	},
 	{
 		component: <ExampleEarthDefender />,
